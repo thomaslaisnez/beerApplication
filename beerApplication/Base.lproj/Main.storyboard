@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DgG-VS-hku">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--BeerApp-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="beerApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FJI-kJ-sX2">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CGj-gZ-G7v">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beer" translatesAutoresizingMaskIntoConstraints="NO" id="Cr4-jv-PGV">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Cr4-jv-PGV" secondAttribute="height" multiplier="2:2" id="3bi-LV-gqZ"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XpT-2l-TUC">
+                                        <rect key="frame" x="0.0" y="371" width="343" height="54.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Anyone can drink beer, but it takes intelligence to enjoy beer&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioJ-09-XRV">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Stephen Beaumont -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmp-Kc-24I">
+                                                <rect key="frame" x="104" y="38.5" width="135" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JDc-E5-AyB">
+                                        <rect key="frame" x="100" y="454" width="143" height="110"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sum-Li-wHn">
+                                                <rect key="frame" x="14.5" y="0.0" width="114" height="30"/>
+                                                <state key="normal" title="Search for beers"/>
+                                                <connections>
+                                                    <segue destination="cFP-M2-FQU" kind="show" id="cMv-1X-aIT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkV-UB-IP9">
+                                                <rect key="frame" x="2.5" y="40" width="138" height="30"/>
+                                                <state key="normal" title="See my saved beers"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD3-gH-YRp">
+                                                <rect key="frame" x="0.0" y="80" width="143" height="30"/>
+                                                <state key="normal" title="Visit BeerDB website"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks to the beer database!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BP6-Bf-j0Y">
+                                        <rect key="frame" x="107" y="592" width="129" height="11"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FJI-kJ-sX2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Fg8-GY-cVc"/>
+                            <constraint firstItem="FJI-kJ-sX2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LGe-F3-P3z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FJI-kJ-sX2" secondAttribute="trailing" id="N4S-4Q-wfn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FJI-kJ-sX2" secondAttribute="bottom" id="x9A-fh-ZAY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="BeerApp" id="URH-xH-zp4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+        </scene>
+        <!--Search for a beer!-->
+        <scene sceneID="oDc-o2-4ZE">
+            <objects>
+                <viewController id="cFP-M2-FQU" customClass="SearchViewController" customModule="beerApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YRb-o9-mHQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="rMW-9n-0tz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="51a-XV-ACu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tju-4t-ytC">
+                                <rect key="frame" x="20" y="74" width="335" height="593"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter beer name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jd-tc-oV7">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter the name of the beer you want to see!" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ViY-OE-4Sl">
+                                        <rect key="frame" x="0.0" y="25.5" width="335" height="251"/>
+                                        <nil key="textColor"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eo6-DQ-zpI">
+                                        <rect key="frame" x="0.0" y="281.5" width="335" height="30"/>
+                                        <state key="normal" title="Search for beer!"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or maybe you want to select a beer type?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcL-Is-XB6">
+                                        <rect key="frame" x="0.0" y="316.5" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sot-xt-dkz">
+                                        <rect key="frame" x="0.0" y="342" width="335" height="216"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCg-lf-czx">
+                                        <rect key="frame" x="0.0" y="563" width="335" height="30"/>
+                                        <state key="normal" title="Search for type!"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tju-4t-ytC" firstAttribute="top" secondItem="YRb-o9-mHQ" secondAttribute="bottom" constant="10" id="2ZJ-BU-6Rg"/>
+                            <constraint firstItem="tju-4t-ytC" firstAttribute="leading" secondItem="51a-XV-ACu" secondAttribute="leading" constant="20" id="4q2-jg-Ff7"/>
+                            <constraint firstAttribute="trailing" secondItem="tju-4t-ytC" secondAttribute="trailing" constant="20" id="XG8-9V-VaD"/>
+                            <constraint firstItem="rMW-9n-0tz" firstAttribute="top" secondItem="tju-4t-ytC" secondAttribute="bottom" id="car-M3-o2u"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search for a beer!" id="DYn-e4-W9d">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="2Ra-YG-k3a">
+                            <connections>
+                                <segue destination="MK7-ig-HiM" kind="unwind" unwindAction="cancelToPlayersViewControllerWithSegue:" id="g4S-Za-Mqs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wkA-EK-2dQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="MK7-ig-HiM" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2033" y="-90"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gAu-RI-rJl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DgG-VS-hku" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rKC-ud-WBB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vbC-46-wHB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tb9-Lh-zXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="beer" width="1024" height="1024"/>
+    </resources>
+</document>
