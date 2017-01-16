@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func cancelToPlayersViewController(segue:UIStoryboardSegue) {
+    @IBAction func cancelToMainViewController(segue:UIStoryboardSegue) {
     }
 
 }

@@ -67,6 +67,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkV-UB-IP9">
                                                 <rect key="frame" x="2.5" y="40" width="138" height="30"/>
                                                 <state key="normal" title="See my saved beers"/>
+                                                <connections>
+                                                    <segue destination="GeR-JW-nkQ" kind="show" id="hGF-eK-8HA"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD3-gH-YRp">
                                                 <rect key="frame" x="0.0" y="80" width="143" height="30"/>
@@ -97,6 +100,60 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
         </scene>
+        <!--My beers!-->
+        <scene sceneID="Irx-cM-uxm">
+            <objects>
+                <tableViewController id="GeR-JW-nkQ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="m1d-pJ-efz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ayd-8k-pSn">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ayd-8k-pSn" id="y30-9K-zHU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GeR-JW-nkQ" id="OPf-A6-hLu"/>
+                            <outlet property="delegate" destination="GeR-JW-nkQ" id="rwT-FR-Lt8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My beers!" id="CRl-P2-MH4">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="uVp-4p-CoP">
+                            <connections>
+                                <segue destination="sgi-mm-UZU" kind="unwind" unwindAction="cancelToMainViewControllerWithSegue:" id="Xtg-qx-RBi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eao-zq-LX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sgi-mm-UZU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2033" y="691"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ze0-aE-sXB">
+            <objects>
+                <viewController id="gi6-aP-kh6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Th1-Ir-p0e"/>
+                        <viewControllerLayoutGuide type="bottom" id="siN-Bb-RqJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1mE-yY-Ym2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvf-sA-XHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3091" y="701"/>
+        </scene>
         <!--Search for a beer!-->
         <scene sceneID="oDc-o2-4ZE">
             <objects>
@@ -121,11 +178,15 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter the name of the beer you want to see!" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ViY-OE-4Sl">
                                         <rect key="frame" x="0.0" y="25.5" width="335" height="251"/>
                                         <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eo6-DQ-zpI">
                                         <rect key="frame" x="0.0" y="281.5" width="335" height="30"/>
                                         <state key="normal" title="Search for beer!"/>
+                                        <connections>
+                                            <segue destination="Ufi-OL-ZHA" kind="show" id="sVm-td-FxF"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or maybe you want to select a beer type?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcL-Is-XB6">
                                         <rect key="frame" x="0.0" y="316.5" width="335" height="20.5"/>
@@ -139,6 +200,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCg-lf-czx">
                                         <rect key="frame" x="0.0" y="563" width="335" height="30"/>
                                         <state key="normal" title="Search for type!"/>
+                                        <connections>
+                                            <segue destination="Ufi-OL-ZHA" kind="show" id="dXR-to-Qxd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -154,7 +218,7 @@
                     <navigationItem key="navigationItem" title="Search for a beer!" id="DYn-e4-W9d">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="2Ra-YG-k3a">
                             <connections>
-                                <segue destination="MK7-ig-HiM" kind="unwind" unwindAction="cancelToPlayersViewControllerWithSegue:" id="g4S-Za-Mqs"/>
+                                <segue destination="MK7-ig-HiM" kind="unwind" unwindAction="cancelToMainViewControllerWithSegue:" id="rFP-Vb-zsW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -163,6 +227,37 @@
                 <exit id="MK7-ig-HiM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2033" y="-90"/>
+        </scene>
+        <!--Search results-->
+        <scene sceneID="CdI-95-umu">
+            <objects>
+                <tableViewController id="Ufi-OL-ZHA" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kCo-OG-OcN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AYk-Sx-Wj4">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AYk-Sx-Wj4" id="W7k-Mp-YKd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ufi-OL-ZHA" id="d2X-3v-RSl"/>
+                            <outlet property="delegate" destination="Ufi-OL-ZHA" id="lLt-oP-4Do"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search results" id="eJc-Za-iLV">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="fTg-bX-JNE"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="usn-j7-fjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3081" y="-90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gAu-RI-rJl">
@@ -186,4 +281,7 @@
     <resources>
         <image name="beer" width="1024" height="1024"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="sVm-td-FxF"/>
+    </inferredMetricsTieBreakers>
 </document>
