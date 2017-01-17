@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E982842A1E29211E0054F7F9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98284291E29211E0054F7F9 /* SearchViewController.swift */; };
+		E9E0461F1E2D3DC700CD3867 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0461E1E2D3DC700CD3867 /* SearchResultViewController.swift */; };
+		E9E046211E2D3E1100CD3867 /* BeerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E046201E2D3E1100CD3867 /* BeerCellView.swift */; };
+		E9E046241E2D7F0800CD3867 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E046231E2D7F0800CD3867 /* MapKit.framework */; };
 		E9E9F9C01E27D6D2004C226E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F9BF1E27D6D2004C226E /* AppDelegate.swift */; };
 		E9E9F9C21E27D6D2004C226E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E9F9C11E27D6D2004C226E /* ViewController.swift */; };
 		E9E9F9C51E27D6D2004C226E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9E9F9C31E27D6D2004C226E /* Main.storyboard */; };
@@ -36,6 +39,9 @@
 
 /* Begin PBXFileReference section */
 		E98284291E29211E0054F7F9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E9E0461E1E2D3DC700CD3867 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		E9E046201E2D3E1100CD3867 /* BeerCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerCellView.swift; sourceTree = "<group>"; };
+		E9E046231E2D7F0800CD3867 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E9E9F9BC1E27D6D2004C226E /* beerApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = beerApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E9F9BF1E27D6D2004C226E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9E9F9C11E27D6D2004C226E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E046241E2D7F0800CD3867 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9E046221E2D7F0800CD3867 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9E046231E2D7F0800CD3867 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E9E9F9B31E27D6D2004C226E = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +98,7 @@
 				E9E9F9D31E27D6D2004C226E /* beerApplicationTests */,
 				E9E9F9DE1E27D6D2004C226E /* beerApplicationUITests */,
 				E9E9F9BD1E27D6D2004C226E /* Products */,
+				E9E046221E2D7F0800CD3867 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +122,8 @@
 				E9E9F9C81E27D6D2004C226E /* LaunchScreen.storyboard */,
 				E9E9F9CB1E27D6D2004C226E /* Info.plist */,
 				E98284291E29211E0054F7F9 /* SearchViewController.swift */,
+				E9E0461E1E2D3DC700CD3867 /* SearchResultViewController.swift */,
+				E9E046201E2D3E1100CD3867 /* BeerCellView.swift */,
 			);
 			path = beerApplication;
 			sourceTree = "<group>";
@@ -197,6 +215,11 @@
 					E9E9F9BB1E27D6D2004C226E = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					E9E9F9CF1E27D6D2004C226E = {
 						CreatedOnToolsVersion = 8.1;
@@ -263,6 +286,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E982842A1E29211E0054F7F9 /* SearchViewController.swift in Sources */,
+				E9E0461F1E2D3DC700CD3867 /* SearchResultViewController.swift in Sources */,
+				E9E046211E2D3E1100CD3867 /* BeerCellView.swift in Sources */,
 				E9E9F9C21E27D6D2004C226E /* ViewController.swift in Sources */,
 				E9E9F9C01E27D6D2004C226E /* AppDelegate.swift in Sources */,
 			);

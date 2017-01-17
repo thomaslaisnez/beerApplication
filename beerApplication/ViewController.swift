@@ -22,6 +22,11 @@ class ViewController: UIViewController {
 
     @IBAction func cancelToMainViewController(segue:UIStoryboardSegue) {
     }
+    
+    @IBAction func openLink(sender: AnyObject) {
+        //UIApplication.shared.openURL(URL(string: "http://www.brewerydb.com")!)    was deprecated in iOS 10
+        UIApplication.shared.open(URL(string: "http://www.brewerydb.com")!, options: [:], completionHandler: nil)
+    }
 
 }
 
