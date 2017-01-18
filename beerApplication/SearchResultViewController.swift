@@ -84,6 +84,12 @@ class SearchResultViewController: UITableViewController {
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! DetailViewController
+        let index = searchResultsTableView.indexPathsForSelectedRows!.first!.row
+        destination.beerId = ids[index]
+    }
 
     
 }

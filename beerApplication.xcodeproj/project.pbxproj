@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		249D3C896FB9F728E3CF4F88 /* Pods_beerApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485D368F9784ECACE57D42A4 /* Pods_beerApplication.framework */; };
+		E98216041E2FB7E800A2AB3C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98216031E2FB7E800A2AB3C /* DetailViewController.swift */; };
 		E982842A1E29211E0054F7F9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98284291E29211E0054F7F9 /* SearchViewController.swift */; };
 		E9E0461F1E2D3DC700CD3867 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E0461E1E2D3DC700CD3867 /* SearchResultViewController.swift */; };
 		E9E046211E2D3E1100CD3867 /* BeerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E046201E2D3E1100CD3867 /* BeerCellView.swift */; };
@@ -44,6 +45,7 @@
 		55E9597858D7FD84CA9B51D3 /* Pods_beerApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beerApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E7BFC01A096146BE11A2CA /* Pods_beerApplicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_beerApplicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E587E0D9E7FE4D52A1B3A733 /* Pods-beerApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beerApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-beerApplication/Pods-beerApplication.release.xcconfig"; sourceTree = "<group>"; };
+		E98216031E2FB7E800A2AB3C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E98284291E29211E0054F7F9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E9E0461E1E2D3DC700CD3867 /* SearchResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		E9E046201E2D3E1100CD3867 /* BeerCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerCellView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				E98284291E29211E0054F7F9 /* SearchViewController.swift */,
 				E9E0461E1E2D3DC700CD3867 /* SearchResultViewController.swift */,
 				E9E046201E2D3E1100CD3867 /* BeerCellView.swift */,
+				E98216031E2FB7E800A2AB3C /* DetailViewController.swift */,
 			);
 			path = beerApplication;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				E982842A1E29211E0054F7F9 /* SearchViewController.swift in Sources */,
 				E9E0461F1E2D3DC700CD3867 /* SearchResultViewController.swift in Sources */,
 				E9E046211E2D3E1100CD3867 /* BeerCellView.swift in Sources */,
+				E98216041E2FB7E800A2AB3C /* DetailViewController.swift in Sources */,
 				E9E9F9C21E27D6D2004C226E /* ViewController.swift in Sources */,
 				E9E9F9C01E27D6D2004C226E /* AppDelegate.swift in Sources */,
 			);
