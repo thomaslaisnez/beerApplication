@@ -61,7 +61,7 @@
                                                 <rect key="frame" x="26.5" y="0.0" width="114" height="30"/>
                                                 <state key="normal" title="Search for beers"/>
                                                 <connections>
-                                                    <segue destination="cFP-M2-FQU" kind="show" id="cMv-1X-aIT"/>
+                                                    <segue destination="cFP-M2-FQU" kind="show" identifier="toSearch" id="cMv-1X-aIT"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkV-UB-IP9">
@@ -300,6 +300,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="cFP-M2-FQU" id="1Qo-2o-F1Y"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eo6-DQ-zpI">
                                         <rect key="frame" x="0.0" y="61" width="335" height="30"/>
@@ -308,7 +311,7 @@
                                         </constraints>
                                         <state key="normal" title="Search for beer!"/>
                                         <connections>
-                                            <segue destination="Ufi-OL-ZHA" kind="show" id="sVm-td-FxF"/>
+                                            <segue destination="Ufi-OL-ZHA" kind="show" identifier="textSearch" id="Dgv-vZ-NsX"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or maybe you want to select a beer type?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcL-Is-XB6">
@@ -322,6 +325,9 @@
                                     </label>
                                     <pickerView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sot-xt-dkz">
                                         <rect key="frame" x="0.0" y="122" width="335" height="215"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="cFP-M2-FQU" id="CPy-Qz-KOc"/>
+                                        </connections>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCg-lf-czx">
                                         <rect key="frame" x="0.0" y="342" width="335" height="30"/>
@@ -330,7 +336,7 @@
                                         </constraints>
                                         <state key="normal" title="Search for type!"/>
                                         <connections>
-                                            <segue destination="Ufi-OL-ZHA" kind="show" id="dXR-to-Qxd"/>
+                                            <segue destination="Ufi-OL-ZHA" kind="show" identifier="categorySearch" id="QHI-7I-0jD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -345,6 +351,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search!" id="DYn-e4-W9d"/>
+                    <connections>
+                        <outlet property="category" destination="Sot-xt-dkz" id="LWi-T6-xPQ"/>
+                        <outlet property="text" destination="ViY-OE-4Sl" id="Vb5-Ag-fwV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wkA-EK-2dQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,17 +376,23 @@
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is a test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0k7-97-Ure">
-                                            <rect key="frame" x="128" y="11" width="119" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0k7-97-Ure">
+                                            <rect key="frame" x="13" y="13" width="316" height="17.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0k7-97-Ure" firstAttribute="leading" secondItem="W7k-Mp-YKd" secondAttribute="leadingMargin" constant="5" id="Tnz-N6-Ozy"/>
+                                        <constraint firstItem="0k7-97-Ure" firstAttribute="top" secondItem="W7k-Mp-YKd" secondAttribute="topMargin" constant="5" id="YFR-R1-Lkv"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0k7-97-Ure" secondAttribute="bottom" constant="5" id="h8A-uL-e0b"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0k7-97-Ure" secondAttribute="trailing" constant="5" id="l0m-Lg-yfp"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="gi6-aP-kh6" kind="show" id="qc5-5J-vCI"/>
+                                    <outlet property="cellLabel" destination="0k7-97-Ure" id="uY6-I3-KXk"/>
+                                    <segue destination="gi6-aP-kh6" kind="show" id="igf-05-Z2f"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -386,10 +402,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Search results" id="eJc-Za-iLV"/>
+                    <connections>
+                        <outlet property="searchResultsTableView" destination="kCo-OG-OcN" id="NKe-Ww-PBp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usn-j7-fjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3080.8000000000002" y="-90.404797601199405"/>
+            <point key="canvasLocation" x="3036" y="-90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gAu-RI-rJl">
@@ -414,6 +433,6 @@
         <image name="beer" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sVm-td-FxF"/>
+        <segue reference="QHI-7I-0jD"/>
     </inferredMetricsTieBreakers>
 </document>
