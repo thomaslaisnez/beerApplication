@@ -27,6 +27,7 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         beers.removeAll()
         ids.removeAll()
+        text.text = ""
         
         category.dataSource = self
         category.delegate = self
@@ -68,55 +69,32 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
 //        }
 //    }
     
-    func doGetQuery(queryString: String) {
-        
-        let newSearchQuery = queryString.replacingOccurrences(of: " ", with: "%20")
-        print(newSearchQuery)
-        Alamofire.request("https://api.brewerydb.com/v2/search?q=" + newSearchQuery + "&type=beer&p=1&key=e1fd665a365668c993581f17cbd0358e&format=json").responseJSON {
-            (response) -> Void in
-            
-            if let value = response.result.value {
-                let jsonBeer = JSON(value)
-                
-                for i in 0...11 {
-                    if(!jsonBeer["data"][i]["name"].stringValue.isEmpty){
-                        //print(jsonBeer["data"][i]["name"].stringValue)
-                        self.ids.append(jsonBeer["data"][i]["id"].stringValue)
-                        self.beers.append(jsonBeer["data"][i]["name"].stringValue)
-                        //print(self.categories)
-                    }
-                    //print(jsonBeer["data"][i]["name"].stringValue)
-                }
-                //print(jsonBeer["data"]["name"].stringValue)
-                
-            }
-        }
-    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if(segue.identifier == "textSearch"){
-            doGetQuery(queryString: text.text!)
+            //doGetQuery(queryString: text.text!)
             let destination = segue.destination as! SearchResultViewController
-            
+            destination.searchQuery = text.text
             //print("this is the given text")
             //destination.searchQuery = text.text
             //print(text.text!)
-            destination.beers.removeAll()
-            destination.beers = self.beers
-            destination.ids.removeAll()
-            destination.ids = self.beers
+            //destination.beers.removeAll()
+            //destination.beers = self.beers
+            //destination.ids.removeAll()
+            //destination.ids = self.beers
             //destination.viewDidLoad()
         }
         if(segue.identifier == "categorySearch"){
-            doGetQuery(queryString: selectedCategory)
+            //doGetQuery(queryString: selectedCategory)
             let destination = segue.destination as! SearchResultViewController
-            
+            destination.searchQuery = selectedCategory
             //print("this is the given category")
             //destination.searchQuery = selectedCategory
             //print(selectedCategory)
-            destination.beers = self.beers
-            destination.ids = self.beers
+            //destination.beers = self.beers
+            //destination.ids = self.beers
             //destination.viewDidLoad()
         }
     }
@@ -136,4 +114,9 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedCategory = categories[row]
     }
+    
+    @IBAction func primaryActionTriggered(_ sender: Any) {
+        dismissKeyboard()
+    }
+
 }
