@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import RealmSwift
 
 class ViewController: UIViewController {
     
@@ -60,6 +61,10 @@ class ViewController: UIViewController {
             let destination = segue.destination as! SearchViewController
             destination.categories = categoryArray
         }
+        if(segue.identifier == "toSaved"){
+            //let destination = segue.destination as! SavedViewController
+        }
+        
     }
 
 }
