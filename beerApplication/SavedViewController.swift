@@ -1,10 +1,3 @@
-//
-//  SavedViewController.swift
-//  beerApplication
-//
-//  Created by Thomas Laisnez on 19/01/17.
-//  Copyright © 2017 Thomas Laisnez. All rights reserved.
-//
 
 import UIKit
 import RealmSwift
@@ -19,26 +12,18 @@ class SavedViewController: UITableViewController {
         super.viewDidLoad()
         
         getBeersFromDB()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        //print(beers[0].name)
     }
     
-    @IBAction func unwindToSavedBeers(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToSavedBeers(segue: UIStoryboardSegue) {}          //word gebruikt om terug naar lijstscherm te gaan - maar die knop is vervangen door toevoegen en verwijderen van bieren uit je bierlijst - bij verwijderen van bier ga je wel terug naar de opgeslagen bierlijst
     
     func getBeersFromDB() {
-        //DispatchQueue(label: "background").async {
-            let realm = try! Realm()
-            self.beers = Array(realm.objects(Beer.self))
-        //}
+        let realm = try! Realm()                            //Realm documentation
+        self.beers = Array(realm.objects(Beer.self))
+  
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,13 +46,10 @@ class SavedViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! DetailViewController
         let index = myBeersTableView.indexPathsForSelectedRows!.first!.row
-        print(beers[index].name)
         destination.beer = beers[index]
-        //destination.navigationItem.rightBarButtonItem?.isEnabled = false
-        //destination.navigationItem.rightBarButtonItem?.title = "-"
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {            //zorgen dat alle bieren altijd in de lijst weergeven worden na update
         getBeersFromDB()
         self.myBeersTableView.reloadData()
     }

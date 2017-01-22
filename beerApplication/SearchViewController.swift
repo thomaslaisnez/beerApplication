@@ -1,10 +1,3 @@
-//
-//  SearchViewController.swift
-//  beerApplication
-//
-//  Created by Thomas Laisnez on 13/01/17.
-//  Copyright © 2017 Thomas Laisnez. All rights reserved.
-//
 
 import UIKit
 import Alamofire
@@ -23,7 +16,6 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         beers.removeAll()
         ids.removeAll()
@@ -32,70 +24,27 @@ class SearchViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         category.dataSource = self
         category.delegate = self
         
-        //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SearchViewController.dismissKeyboard))
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SearchViewController.dismissKeyboard))         // Source: http://stackoverflow.com/questions/24126678/close-ios-keyboard-by-touching-anywhere-using-swift       - dismiss keyboard when you tap somewhere else
         view.addGestureRecognizer(tap)
-        
-        
-        
-        //getDataFromDatabase()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    //Calls this function when the tap is recognized.
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+    func dismissKeyboard() {                //also used for dismissing the keyboard
         view.endEditing(true)
     }
-    
-//    func getDataFromDatabase() {
-//        Alamofire.request("https://api.brewerydb.com/v2/beer/oeGSxs?key=e1fd665a365668c993581f17cbd0358e&format=json").responseJSON {
-//            (response) -> Void in
-//            
-//            if let value = response.result.value {
-//                let jsonBeer = JSON(value)
-//                
-//                print("start")
-//                print(jsonBeer["data"]["name"].stringValue)
-//                print("did this work")
-//            }
-//        }
-//    }
-    
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if(segue.identifier == "textSearch"){
-            //doGetQuery(queryString: text.text!)
             let destination = segue.destination as! SearchResultViewController
             destination.searchQuery = text.text
-            //print("this is the given text")
-            //destination.searchQuery = text.text
-            //print(text.text!)
-            //destination.beers.removeAll()
-            //destination.beers = self.beers
-            //destination.ids.removeAll()
-            //destination.ids = self.beers
-            //destination.viewDidLoad()
         }
         if(segue.identifier == "categorySearch"){
-            //doGetQuery(queryString: selectedCategory)
             let destination = segue.destination as! SearchResultViewController
             destination.searchQuery = selectedCategory
-            //print("this is the given category")
-            //destination.searchQuery = selectedCategory
-            //print(selectedCategory)
-            //destination.beers = self.beers
-            //destination.ids = self.beers
-            //destination.viewDidLoad()
         }
     }
     

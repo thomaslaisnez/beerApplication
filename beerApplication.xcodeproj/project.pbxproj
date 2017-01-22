@@ -105,6 +105,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E93C43CB1E34E6D800B5E5A6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E9E2399F1E302FF6002A81DF /* SavedViewController.swift */,
+				E98216031E2FB7E800A2AB3C /* DetailViewController.swift */,
+				E9E0461E1E2D3DC700CD3867 /* SearchResultViewController.swift */,
+				E98284291E29211E0054F7F9 /* SearchViewController.swift */,
+				E9E9F9C11E27D6D2004C226E /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E93C43CC1E34E6EF00B5E5A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9E19EF41E3024B500ABF003 /* Beer.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E93C43CD1E34E6F800B5E5A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9E046201E2D3E1100CD3867 /* BeerCellView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		E9E046221E2D7F0800CD3867 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,18 +169,14 @@
 		E9E9F9BE1E27D6D2004C226E /* beerApplication */ = {
 			isa = PBXGroup;
 			children = (
+				E93C43CD1E34E6F800B5E5A6 /* View */,
+				E93C43CC1E34E6EF00B5E5A6 /* Model */,
+				E93C43CB1E34E6D800B5E5A6 /* ViewControllers */,
 				E9E9F9BF1E27D6D2004C226E /* AppDelegate.swift */,
-				E9E9F9C11E27D6D2004C226E /* ViewController.swift */,
 				E9F328BC1E2EFC3C00CE10FE /* Main.storyboard */,
 				E9E9F9C61E27D6D2004C226E /* Assets.xcassets */,
 				E9E9F9C81E27D6D2004C226E /* LaunchScreen.storyboard */,
 				E9E9F9CB1E27D6D2004C226E /* Info.plist */,
-				E98284291E29211E0054F7F9 /* SearchViewController.swift */,
-				E9E0461E1E2D3DC700CD3867 /* SearchResultViewController.swift */,
-				E9E046201E2D3E1100CD3867 /* BeerCellView.swift */,
-				E98216031E2FB7E800A2AB3C /* DetailViewController.swift */,
-				E9E19EF41E3024B500ABF003 /* Beer.swift */,
-				E9E2399F1E302FF6002A81DF /* SavedViewController.swift */,
 			);
 			path = beerApplication;
 			sourceTree = "<group>";

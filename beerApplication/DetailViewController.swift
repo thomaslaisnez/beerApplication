@@ -1,10 +1,3 @@
-//
-//  DetailViewController.swift
-//  beerApplicatvar
-//
-//  Created by Thomas Laisnez on 18/01/17.
-//  Copyright © 2017 Thomas Laisnez. All rights reserved.
-//
 
 import UIKit
 import Alamofire
@@ -33,14 +26,11 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         if(!beerId.isEmpty){
-            //print(beerId)
             getBeer()
-            //makeBeerItem()
         }else{
             setBeer()
         }
         
-        //print(beer)
         
         if(beerInDB() == true){
             inDB = true
@@ -49,7 +39,6 @@ class DetailViewController: UIViewController {
             inDB = false
         }
         
-        //print(inDB)
     }
     
     func getBeer(){
@@ -63,7 +52,6 @@ class DetailViewController: UIViewController {
                 self.beerName.text = jsonBeer["data"]["name"].stringValue
                 self.beerDescription.text = jsonBeer["data"]["style"]["description"].stringValue
                 self.beerCategory.text = jsonBeer["data"]["style"]["category"]["name"].stringValue
-                //self.beerAlcoholPercentage.text = jsonBeer["data"]["style"]["abvMax"].stringValue
                 if(jsonBeer["data"]["style"]["abvMax"].stringValue.isEmpty){
                     self.beerAlcoholPercentage.text = "Unknown"
                 }else{
@@ -75,15 +63,11 @@ class DetailViewController: UIViewController {
                     self.beerOrganic.text = "No"
                 }
                 if(!jsonBeer["data"]["labels"]["icon"].stringValue.isEmpty || jsonBeer["data"]["labels"]["icon"].stringValue.contains(".png")){
-                    //print(jsonBeer["data"]["labels"]["icon"].stringValue)
-                    //let url = URL(string: jsonBeer["data"]["labels"]["icon"].stringValue)
-                    //let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                    //self.beerImage.image = UIImage(data: data!)
                     self.beerURL = jsonBeer["data"]["labels"]["icon"].stringValue
                     let url = URL(string: self.beerURL)
                     
                     DispatchQueue.global().async {
-                        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                        let data = try? Data(contentsOf: url!)
                         DispatchQueue.main.async {
                             self.beerImage.image = UIImage(data: data!)
                         }
@@ -104,22 +88,18 @@ class DetailViewController: UIViewController {
 
     }
     
-    func setBeer(){
+    func setBeer(){                                                     // bier in bierobject onderbrengen
         self.beerName.text = beer.name
         self.beerDescription.text = beer.desc
         self.beerCategory.text = beer.category
         self.beerAlcoholPercentage.text = beer.alcoholPercentage
         self.beerOrganic.text = beer.organic
         if(!beer.imageURL.isEmpty || beer.imageURL.contains(".png")){
-            //print(jsonBeer["data"]["labels"]["icon"].stringValue)
-            //let url = URL(string: jsonBeer["data"]["labels"]["icon"].stringValue)
-            //let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            //self.beerImage.image = UIImage(data: data!)
             self.beerURL = beer.imageURL
             let url = URL(string: self.beerURL)
             
             DispatchQueue.global().async {
-                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                let data = try? Data(contentsOf: url!)
                 DispatchQueue.main.async {
                     self.beerImage.image = UIImage(data: data!)
                 }
@@ -139,11 +119,8 @@ class DetailViewController: UIViewController {
     @IBAction func saveBeerToDB(){
         
         if(inDB == true){
-            //let realm = try! Realm()
-            //realm.delete(beer)
             do {
                 let realm = try Realm()
-                //print(realm.configuration.fileURL!.absoluteString)
                 try realm.write {
                     realm.delete(self.beer)
                 }
@@ -159,7 +136,6 @@ class DetailViewController: UIViewController {
             
             do {
                 let realm = try Realm()
-                //print(realm.configuration.fileURL!.absoluteString)
                 try realm.write {
                     realm.add(self.beer)
                 }
@@ -184,9 +160,7 @@ class DetailViewController: UIViewController {
         self.beer.breweryLongitude = long
     }
     
-    func beerInDB() -> Bool{
-        
-        //makeBeerItem()
+    func beerInDB() -> Bool{                        //check if beer is in DB
         
         let realm = try! Realm()
         let beers = Array(realm.objects(Beer.self))
